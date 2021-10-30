@@ -1,23 +1,59 @@
-# Compiled class file
-*.class
+package calc;
 
-# Log file
-*.log
+import java.util.Scanner;
 
-# BlueJ files
-*.ctxt
+public class calculator {
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+    public static void main(String[] args) {
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+        char operator;
+        Double number1, number2, result;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Choose an operator: +, -, *, or /");
+        operator = input.next().charAt(0);
+
+
+        System.out.println("Enter first number");
+        number1 = input.nextDouble();
+
+        System.out.println("Enter second number");
+        number2 = input.nextDouble();
+
+        switch (operator) {
+
+            // for addition between numbers
+            case '+':
+                result = number1 + number2;
+                System.out.println(number1 + " + " + number2 + " = " + result);
+                break;
+
+            // for subtraction between numbers
+            case '-':
+                result = number1 - number2;
+                System.out.println(number1 + " - " + number2 + " = " + result);
+                break;
+
+            // for multiplication between numbers
+            case '*':
+                result = number1 * number2;
+                System.out.println(number1 + " * " + number2 + " = " + result);
+                break;
+
+            // for  division between numbers
+            case '/':
+                result = number1 / number2;
+                System.out.println(number1 + " / " + number2 + " = " + result);
+                break;
+
+            default:
+                System.out.println("Invalid operator!");
+                break;
+        }
+
+        input.close();
+    }
+
+}
